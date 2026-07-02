@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical Examination Records</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practical Examination Records</h1>
+    <table>
+        <tr>
+            <th>S.No.</th>
+            <th>Name & Address</th>
+            <th>Course Code</th>
+            <th>No. of Days</th>
+            <th>Batch No</th>
+            <th>No. of Students</th>
+            <th>Amount of Batch</th>
+            <th>Remuneration Before TDS</th>
+            <th>TDS (10%)</th>
+            <th>Remuneration After TDS</th>
+            <th>TA</th>
+            <th>DA</th>
+            <th>Total Remuneration</th>
+            <th>PAN</th>
+            <th>IFSC Code</th>
+            <th>Account Number</th>
+            <th>Total</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ record.name_and_address }}</td>
+            <td>{{ record.course_code }}</td>
+            <td>{{ record.no_of_days }}</td>
+            <td>{{ record.batch_no }}</td>
+            <td>{{ record.no_of_students }}</td>
+            <td>{{ record.amount_of_batch }}</td>
+            <td>{{ record.remuneration_before_tds }}</td>
+            <td>{{ record.tds_10percent }}</td>
+            <td>{{ record.remuneration_after_tds }}</td>
+            <td>{{ record.ta }}</td>
+            <td>{{ record.da }}</td>
+            <td>{{ record.total_remuneration }}</td>
+            <td>{{ record.pan }}</td>
+            <td>{{ record.ifsc_code }}</td>
+            <td>{{ record.account_number }}</td>
+            <td>{{ record.total }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="17">No records found.</td></tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'view_records_choice' %}">⬅ Back</a>
+</body>
+</html>

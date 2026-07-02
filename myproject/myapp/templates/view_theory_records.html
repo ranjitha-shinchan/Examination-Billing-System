@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theory Examination Records</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Theory Examination Records</h1>
+    <table>
+        <tr>
+            <th>Valuator Type</th>
+            <th>Department</th>
+            <th>Semester</th>
+            <th>Name</th>
+            <th>College</th>
+            <th>Subject Code</th>
+            <th>No. of Scripts</th>
+            <th>Amount per Script</th>
+            <th>Valuation Charge</th>
+            <th>Reviewer Charge</th>
+            <th>Total</th>
+            <th>Income Tax (10%)</th>
+            <th>Amount After TDS</th>
+            <th>DA</th>
+            <th>TA</th>
+            <th>Net Payable</th>
+            <th>PAN</th>
+            <th>IFSC Code</th>
+            <th>Bank Account No</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.evaluator_type }}</td>
+            <td>{{ record.dept }}</td>
+            <td>{{ record.sem }}</td>
+            <td>{{ record.name }}</td>
+            <td>{{ record.college }}</td>
+            <td>{{ record.subject_code }}</td>
+            <td>{{ record.no_of_scripts }}</td>
+            <td>{{ record.amount_per_script }}</td>
+            <td>{{ record.valuation_charge }}</td>
+            <td>{{ record.reviewer_charge }}</td>
+            <td>{{ record.total }}</td>
+            <td>{{ record.income_tax_10percent }}</td>
+            <td>{{ record.amount_after_tds }}</td>
+            <td>{{ record.da }}</td>
+            <td>{{ record.ta }}</td>
+            <td>{{ record.net_payable }}</td>
+            <td>{{ record.pan }}</td>
+            <td>{{ record.ifsc_code }}</td>
+            <td>{{ record.bank_account_number }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="19">No records found.</td></tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'view_records_choice' %}">⬅ Back</a>
+</body>
+</html>

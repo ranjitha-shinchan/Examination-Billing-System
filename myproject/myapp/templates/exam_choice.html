@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose Examination Type</title>
+</head>
+<body>
+    <h1>Select Examination Type</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="exam_type" value="theory">Theory Examination</button>
+        <button type="submit" name="exam_type" value="practical">Practical Examination</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Records</title>
+</head>
+<body>
+    <h1>Choose Records to View</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="exam_type" value="theory">View Theory Records</button>
+        <button type="submit" name="exam_type" value="practical">View Practical Records</button>
+    </form>
+    <br>
+    <a href="{% url 'exam_choice' %}">⬅ Back to Home</a>
+</body>
+</html>

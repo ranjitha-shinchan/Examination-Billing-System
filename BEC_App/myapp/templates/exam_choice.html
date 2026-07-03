@@ -1,14 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Choose Examination Type</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
+
+<div class="container">
+
     <h1>Select Examination Type</h1>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" name="exam_type" value="theory">Theory Examination</button>
-        <button type="submit" name="exam_type" value="practical">Practical Examination</button>
-    </form>
+
+    <div class="button-group">
+        <form method="post">
+            {% csrf_token %}
+
+            <button type="submit" name="exam_type" value="theory">
+                Theory Examination
+            </button>
+            <button type="submit" name="exam_type" value="practical">
+                Practical Examination
+            </button>
+
+        </form>
+    </div>
+
+</div>
+
 </body>
 </html>
